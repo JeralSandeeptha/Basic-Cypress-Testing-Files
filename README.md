@@ -18,6 +18,12 @@ npm i -D cypress
 
 ## Run Cypress
 
+Through Cypress Application
 ```bash
 npx open cypress
+```
+
+Thorugh Terminal
+```bash
+npx cypress run
 ```
