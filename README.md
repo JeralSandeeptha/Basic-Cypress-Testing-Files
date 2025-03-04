@@ -6,6 +6,7 @@
 - [Install Cypress](#install-cypress)
 - [Run Cypress](#run-cypress)
 - [Locators](#locators)
+- [Mocking Network Requests](#mocking-network-requests)
 
 ## Prerequiesites
 
@@ -77,4 +78,38 @@ cy.get('button').filter('.primary') // Selects buttons with class 'primary'
 // using children() and parent()
 cy.get('.list').children('li') // Gets all `li` inside `.list`
 cy.get('li').parent() // Gets the parent of an `li`
+```
+
+## Mocking Network Requests
+
+1. Intercepting and Stubbing Requests
+
+```js
+cy.intercept('GET', '/api/users', { fixture: 'users.json' }).as('getUsers');
+cy.visit('/users');
+cy.wait('@getUsers');
+```
+
+2. Mocking Responses with Dynamic Data
+
+```js
+cy.intercept('GET', '/api/users', (req) => {
+    req.reply({ statusCode: 200, body: [{ id: 1, name: 'John Doe' }] });
+}).as('getUsers');
+```
+
+3. Delaying or Failing Requests
+
+We can simulate network latency or failures.
+
+```js
+cy.intercept('GET', '/api/users', {
+    delayMs: 2000, // 2 seconds delay
+    body: [{ id: 1, name: 'John Doe' }]
+});
+
+cy.intercept('GET', '/api/users', {
+    statusCode: 500,
+    body: { error: 'Internal Server Error' }
+});
 ```
