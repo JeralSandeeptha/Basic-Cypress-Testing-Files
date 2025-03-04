@@ -13,7 +13,7 @@ Cypress requires `Nodejs` Run Time Environment. First we need to install `Nodejs
 
 ## Install Cypress
 
-```bash
+```js
 npm i -D cypress
 ```
 
