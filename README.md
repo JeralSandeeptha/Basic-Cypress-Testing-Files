@@ -31,6 +31,7 @@ npx cypress run
 
 ## Locators
 
+- There are 3 main locators. `get` `contains` `find`
 - It's better to use test id `data-*` attributes (`data-test`, `data-cy`, `data-testid`)
 - For static contents better to use contains method
 ```bash
