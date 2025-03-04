@@ -131,3 +131,9 @@ cy.intercept('GET', '/api/users', {
     body: { error: 'Internal Server Error' }
 });
 ```
+
+4. Testing Backend Routes
+
+```js
+
+```
