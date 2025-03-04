@@ -4,6 +4,7 @@
 
 - [Prerequiesites](#prerequiesites)
 - [Install Cypress](#install-cypress)
+- [Setup tsconfig](#setup-tsconfig)
 - [Run Cypress](#run-cypress)
 - [Locators](#locators)
 - [Mocking Network Requests](#mocking-network-requests)
@@ -28,6 +29,23 @@ npx open cypress
 Thorugh Terminal
 ```bash
 npx cypress run
+```
+
+## Setup tsconfig
+
+- This should include cypress folder inside of include array.
+```ts
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "baseUrl": "src",
+        "outDir": "dist",
+        "sourceMap": true,
+        "noImplicitAny": true
+    },
+    "include": ["cypress", "src/**/*"]
+}
 ```
 
 ## Locators
