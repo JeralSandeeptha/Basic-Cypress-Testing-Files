@@ -1,5 +1,5 @@
 # Cypress Web Automation Framework
-
+ 
 ## Table of Contents
 
 - [Prerequiesites](#prerequiesites)
