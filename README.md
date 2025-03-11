@@ -1,6 +1,6 @@
 # Cypress Web Automation Framework
  
-## Table of Contents
+## Table of Contents 
 
 - [Prerequiesites](#prerequiesites)
 - [Install Cypress](#install-cypress)
